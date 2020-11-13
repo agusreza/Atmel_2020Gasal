@@ -25,8 +25,12 @@ int main(void)
     {
 		kirimkeDisplay(counter);
 		counter++;
-		_delay_ms(1000);
+		_delay_ms(200);
 		
+		if (counter > 9)
+		{
+			counter = 0;
+		}
 		
     }
 }
@@ -55,11 +59,11 @@ void kirimkeDisplay (uint8_t angka)
 		break;
 	case 7: dataSevenOut = 0b00000111;
 		break;
-	case 8: dataSevenOut = 0b00111111;
+	case 8: dataSevenOut = 0b01111111;
 		break;
-	case 9: dataSevenOut = 0b11101111;
+	case 9: dataSevenOut = 0b01101111;
 		break;
-	default: 
+	default: dataSevenOut = 0b10000000;
 		break;
 	}
 	
